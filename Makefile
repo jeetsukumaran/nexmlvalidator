@@ -2,11 +2,11 @@ JCC = javac
 
 all: src/validator/ValidateNeXML.class bin/ bin/nexmlvalidator.jar
 
-src/Validator/ValidateNeXML.class: src/Validator/ValidateNeXML.java
-	$(JCC) src/Validator/ValidatorNeXML.java
+src/validator/ValidateNeXML.class: src/validator/ValidateNeXML.java
+	cd src; $(JCC) validator/ValidateNeXML.java
 
 bin:
 	mkdir -p bin
 
-bin/nexmlvalidator.jar: src/Validator/ValidateNeXML.class
+bin/nexmlvalidator.jar: src/validator/ValidateNeXML.class
 	jar mcf src/manifest.txt bin/nexmlvalidator.jar -C src/ .

@@ -1,0 +1,39 @@
+
+# Introduction
+
+A standalone [NeXML](http://www.nexml.org/) validation utility.
+This is a modification of the validation utility found
+[here](https://github.com/nexml/nexml), which in turn is a modification of a
+[Xerces-J](http://xerces.apache.org/xerces-j/)-based XML validator originally
+written by Terri Liebowitz of the San Diego Supercomputing Center, with
+modifications by [Mark Holder](http://phylo.bio.ku.edu/content/mark-t-holder).
+
+# Building
+
+Run `make` in the project top-level directory:
+
+    $ make
+
+This will result in a Java JAR file created in the `bin/` subdirectory.
+
+# Usage
+
+Invoke the resulting JAR file passing it the path to a [NeXML](http://www.nexml.org/) file to be validated:
+
+    $ java -jar nexmlvalidator.jar data.nexml
+
+This mode of invocation requires network access, as the schema will be fetched
+from its [remote home](http://www.nexml.org/nexml/xsd/nexml.xsd).
+
+To run in offline mode (or otherwise use an alternate schema), specify the path to the schema as the second argument:
+
+
+    $ java -jar nexmlvalidator.jar data.nexml /path/to/schema/nexml.xsd
+
+# License
+
+This work is licensed under the [Creative Commons Attribution 3.0 Unported
+License](http://creativecommons.org/licenses/by/3.0/). To view a copy of this
+license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to
+Creative Commons, 444 Castro Street, Suite 900, Mountain View, California,
+94041, USA.

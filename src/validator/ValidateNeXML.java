@@ -11,12 +11,12 @@ public class ValidateNeXML {
 	public static String againstXSD(final String xmlFilepath, final String xsdFilepath, final String namespace) {
 		try {
 			// make sure both paths specify a valid file
-			File config_fp = new File(xmlFilepath);
-			if (!config_fp.exists())
-				return "Unable to open file " + xmlFilepath;
-			config_fp = new File(xsdFilepath);
-			if (!config_fp.exists())
-				return "Unable to open file " + xsdFilepath;
+			// File config_fp = new File(xmlFilepath);
+			// if (!config_fp.exists())
+			// 	return "Unable to open file " + xmlFilepath;
+			// config_fp = new File(xsdFilepath);
+			// if (!config_fp.exists())
+			// 	return "Unable to open file " + xsdFilepath;
 			final DOMParser parser = new DOMParser();
 			parser.setFeature("http://xml.org/sax/features/validation", true);
 			parser.setFeature("http://apache.org/xml/features/validation/schema", true);
@@ -31,8 +31,8 @@ public class ValidateNeXML {
 			e.printStackTrace();
 			return e.getMessage();
 		}
-	}	
-	
+	}
+
 	public static void main(final String args[]) {
 		if ( args.length == 0 ) {
 			System.out.println("Usage: NexmlValidator <filename> [schema] [namespace]");
@@ -57,5 +57,5 @@ public class ValidateNeXML {
 		}
 		System.out.println("Validation error: " + retval);
 		System.exit(1);
-	}	
+	}
 }
